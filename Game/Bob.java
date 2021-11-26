@@ -9,11 +9,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bob extends Actor
 {
     GreenfootImage ActorWeapon = new GreenfootImage("boy1.png");
+    boolean isImageSet = false;
     /**
      * Act - do whatever the Bob wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
+    {
+        move();
+        shoot();
+        if (isTouching(Weapon.class)){
+            changeimage(ActorWeapon);
+        }
+    }
+    private void changeimage(GreenfootImage Image)
+    {
+        setImage(Image); 
+        isImageSet = true;
+    }
+    private void move()
     {
         if (Greenfoot.isKeyDown("up")) {
             setLocation(getX(), getY() - 3);
@@ -33,9 +47,16 @@ public class Bob extends Actor
             background.removeLives();
             removeTouching(Snake.class);
         }
-        if (isTouching(Weapon.class)){
-            setImage(ActorWeapon);
+    }
+    private void shoot()
+    {
+        if (Greenfoot.isKeyDown("space") && isImageSet)
+        {
+            fire();
         }
     }
-    
+    private void fire()
+    {
+        
+    }
 }
