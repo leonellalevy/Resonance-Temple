@@ -6,14 +6,41 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends Actor
+public class Bullet extends SmoothMover
 {
+    /** The damage this bullet will deal */
+        private static final int damage = 16;
+    
+        /** A bullet looses one life each act, and will disappear when life = 0 */
+        private int life = 30;
+    
+    public Bullet()
+    {
+    }
+    
+    public Bullet(Vector speed, int rotation)
+    {
+        super(speed);
+        setRotation(rotation);
+        addToVelocity(new Vector(rotation, 15));
+    }
+    
     /**
-     * Act - do whatever the Bullet wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * The bullet will damage asteroids if it hits them.
      */
     public void act()
     {
-        // Add your action code here.
+        if(life <= 0) {
+            getWorld().removeObject(this);
+        } 
+        else {
+            life--;
+            move();
+        }
     }
+    
+    /**
+     * Check whether we have hit an asteroid.
+     */
 }
+

@@ -28,19 +28,18 @@ public class Background extends World
      */
     private void prepare()
     {
-        Bob bob = new Bob();
-        addObject(bob,296,195);
         Snake snake = new Snake();
-        addObject(snake,100,70);
+        addObject(snake,114,80);
         Snake snake2 = new Snake();
-        addObject(snake2,488,71);
+        addObject(snake2,431,77);
         Snake snake3 = new Snake();
-        addObject(snake3,486,308);
+        addObject(snake3,122,323);
         Snake snake4 = new Snake();
-        addObject(snake4,101,309);
-        snake3.setLocation(511,339);
+        addObject(snake4,421,318);
+        HunterBob hunterBob = new HunterBob();
+        addObject(hunterBob,297,204);
         Weapon weapon = new Weapon();
-        addObject(weapon,188,192);
+        addObject(weapon,189,208);
     }
 
     public void removeLives()

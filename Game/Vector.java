@@ -4,32 +4,24 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Vector  
+public final class Vector  
 {
-    // instance variables - replace the example below with your own
-    private int x;
     double dx;
     double dy;
     int direction;
     double length;
+    
     /**
-     * Constructor for objects of class Vector
+     * Create a new, neutral vector.
      */
     public Vector()
     {
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Create a vector with given direction and length. The direction should be in
+     * the range [0..359], where 0 is EAST, and degrees increase clockwise.
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
     public Vector(int direction, double length)
     {
         this.length = length;
