@@ -1,25 +1,25 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Menu here.
+ * Write a description of class Die here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Menu extends World
+public class Die extends World
 {
+
     /**
-     * Constructor for objects of class MenuPage.
+     * Constructor for objects of class Die.
      * 
      */
-    public Menu()
+    public Die()
     {    
         super(600, 400, 1); 
-        GreenfootImage MenuPage = new GreenfootImage("GAME_MENU.png");
+        GreenfootImage MenuPage = new GreenfootImage("GAME_END.png");
         MenuPage.scale (getWidth(), getHeight ());
         setBackground(MenuPage);
 
-        prepare();
     }
 
     public void act()
@@ -36,14 +36,5 @@ public class Menu extends World
                 }
             }
         }
-    }
-    
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
-        
     }
 }

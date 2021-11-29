@@ -8,12 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HunterBob extends SmoothMover
 {
-    GreenfootImage ActorWeapon = new GreenfootImage("boy1.png");
+    GreenfootImage ActorWeapon = new GreenfootImage("boy2.png");
     boolean isImageSet = false;
     
     private static final int gunReloadTime = 5;         // The minimum delay between firing the gun.
     private int reloadDelayCount;               // How long ago we fired the gun the last time.
-
+    private int rotation = 0;
     /**
      * Act - do whatever the Bob wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -25,7 +25,6 @@ public class HunterBob extends SmoothMover
     }
     public void act()
     {
-        shift();
         shift();
         if (isTouching(Weapon.class)){
             changeimage(ActorWeapon);
@@ -41,15 +40,19 @@ public class HunterBob extends SmoothMover
     {
         if (Greenfoot.isKeyDown("up")) {
             setLocation(getX(), getY() - 3);
+            rotation = 90;
         }
-        if (Greenfoot.isKeyDown("down")) {
+        else if (Greenfoot.isKeyDown("down")) {
             setLocation(getX(), getY() + 3);
+            rotation = 270;
         }
-        if (Greenfoot.isKeyDown("right")) {
+        else if (Greenfoot.isKeyDown("right")) {
             setLocation(getX() + 3, getY());
+            rotation = 0;
         }
-        if (Greenfoot.isKeyDown("left")) {
+        else if (Greenfoot.isKeyDown("left")) {
             setLocation(getX() - 3, getY());
+            rotation = 180;
         }
         if(isTouching(Snake.class))
         {
@@ -59,14 +62,14 @@ public class HunterBob extends SmoothMover
         }
         if (Greenfoot.isKeyDown("space") && isImageSet)
         {
-            fire();
+            fire(rotation);
         }
     }
-    private void fire()
+    private void fire(int rotation)
     {
         if (reloadDelayCount >= gunReloadTime) 
         {
-            Bullet bullet = new Bullet (getVelocity(), getRotation());
+            Bullet bullet = new Bullet (getVelocity(), rotation);
             getWorld().addObject (bullet, getX(), getY());
             bullet.move ();
             reloadDelayCount = 0;

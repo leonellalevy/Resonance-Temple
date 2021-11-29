@@ -8,12 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bullet extends SmoothMover
 {
-    /** The damage this bullet will deal */
-        private static final int damage = 16;
-    
-        /** A bullet looses one life each act, and will disappear when life = 0 */
-        private int life = 30;
-    
+    private int life = 30;
+    private int damage = 2;
     public Bullet()
     {
     }
@@ -38,6 +34,7 @@ public class Bullet extends SmoothMover
             move();
         }
     }
+    
     
     /**
      * Check whether we have hit an asteroid.

@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Write a description of class Background here.
  * 
@@ -48,9 +48,14 @@ public class Background extends World
           showLives();
           if( lives == 0 )
              {
-             Greenfoot.stop();    
+                noObject();
+                Greenfoot.stop();    
              }  
        }
+    private void noObject()
+        {
+            
+        }
     private void showLives()
        {
           showText("Lives:" + lives, 490, 30);    

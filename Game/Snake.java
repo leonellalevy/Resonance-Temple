@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Snake extends Actor
 {
+    private int value = 2;
     /**
      * Act - do whatever the Snake wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,6 +24,20 @@ public class Snake extends Actor
             turn(45);
         } else{
         move(2);
+    }
+    killSnake();
+}
+public void killSnake()
+{ 
+    {
+        if (isTouching(Bullet.class))
+        {
+            value--;
+        }
+        if (value == 0) 
+        {
+            getWorld().removeObject(this);
+        }
     }
 }
 }
