@@ -7,20 +7,23 @@ This game was created on Friday, November 12, 2021.
 -------------------------------------------------------------------------------------
 Authors:
 
-- Trevor Obodoechina
+- Trevor Obodoechina (RETIRED)
 - Ariel Wazana
 - Leonella Levy
 -------------------------------------------------------------------------------------
 This is licensed by MIT. Read LICENSE.txt file.
 -------------------------------------------------------------------------------------
-PATCH NOTES: Version 0.2 - (11/12/2021)
+PATCH NOTES: Version 0.6 - (11/29/2021)
 
-- Changed the read.me file
+- Ariel added new alternate version of main character in game assets
+- Ariel added Menu Start and Game End/Death Screen
+- Leonella updated the code for the game start and game end menu's to work
+- Leonella added bullets
 -------------------------------------------------------------------------------------
 ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠠⠤⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⣀⢤⡒⠉⠁⠀⠒⢂⡀⠀⠀⠀⠈⠉⣒⠤⣀⠀⠀⠀⠀
 ⠀⠀⣠⠾⠅⠈⠀⠙⠀⠀⠀⠈⠀⠀⢀⣀⣓⡀⠉⠀⠬⠕⢄⠀⠀
-⠀⣰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠶⢦⡀⠑⠀⠀⠀⠀⠈⢧⠀hi
+⠀⣰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠶⢦⡀⠑⠀⠀⠀⠀⠈⢧⠀
 ⠀⡇⠀⠀⠀⠀⠀⢤⣀⣀⣀⣀⡀⢀⣀⣀⠙⠀⠀⠀⠀⠀⠀⢸⡄
 ⠀⢹⡀⠀⠀⠀⠀⡜⠁⠀⠀⠙⡴⠁⠀⠀⠱⡄⠀⠀⠀⠀⠀⣸⠀
 ⠀⠀⠱⢄⡀⠀⢰⣁⣒⣒⣂⣰⣃⣀⣒⣒⣂⢣⠀⠀⠀⢀⡴⠁⠀
