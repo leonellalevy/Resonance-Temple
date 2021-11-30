@@ -18,7 +18,7 @@ public class Background extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         prepare();
-        lives = 3;
+        lives = 2;
         showLives();
     }
     
@@ -36,10 +36,10 @@ public class Background extends World
         addObject(snake3,122,323);
         Snake snake4 = new Snake();
         addObject(snake4,421,318);
-        HunterBob hunterBob = new HunterBob();
-        addObject(hunterBob,297,204);
         Weapon weapon = new Weapon();
         addObject(weapon,189,208);
+        Bob bob = new Bob();
+        addObject(bob,291,197);
     }
 
     public void removeLives()
@@ -48,8 +48,7 @@ public class Background extends World
           showLives();
           if( lives == 0 )
              {
-                noObject();
-                Greenfoot.stop();    
+                Greenfoot.setWorld (new Die());   
              }  
        }
     private void noObject()

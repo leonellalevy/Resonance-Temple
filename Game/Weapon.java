@@ -15,7 +15,7 @@ public class Weapon extends SmoothMover
     
     public void act()
     {
-        if (isTouching(HunterBob.class)){
+        if (isTouching(Bob.class)){
             getWorld().removeObject(this);
         }
     }

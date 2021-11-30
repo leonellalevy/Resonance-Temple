@@ -17,8 +17,8 @@ public class Snake extends Actor
     {
         int rnd = Greenfoot.getRandomNumber(20);
         if(rnd == 0){
-            if (getWorld().getObjects(HunterBob.class).isEmpty()) return; 
-            Actor bob = (Actor)getWorld().getObjects(HunterBob.class).get(0); 
+            if (getWorld().getObjects(Bob.class).isEmpty()) return; 
+            Actor bob = (Actor)getWorld().getObjects(Bob.class).get(0); 
             turnTowards(bob.getX(), bob.getY()); 
         } else if(rnd==1) {
             turn(45);

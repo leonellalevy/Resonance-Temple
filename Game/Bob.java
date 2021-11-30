@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class HunterBob here.
+ * Write a description of class Bob here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class HunterBob extends SmoothMover
+public class Bob extends SmoothMover
 {
     GreenfootImage ActorWeapon = new GreenfootImage("boy2.png");
     boolean isImageSet = false;
@@ -18,8 +18,11 @@ public class HunterBob extends SmoothMover
      * Act - do whatever the Bob wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public HunterBob()
+    public Bob()
     {
+        GreenfootImage image = getImage();
+        image.scale(image.getWidth()-630, image.getHeight()-630);
+        setImage(image);
         reloadDelayCount = 5;
         addToVelocity(new Vector(13, 0.7));
     }

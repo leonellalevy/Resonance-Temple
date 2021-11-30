@@ -20,6 +20,7 @@ public class Die extends World
         MenuPage.scale (getWidth(), getHeight ());
         setBackground(MenuPage);
 
+        prepare();
     }
 
     public void act()
@@ -31,10 +32,19 @@ public class Die extends World
             int y = mouse.getY();
 
             if (Greenfoot.mouseClicked(null)) {
-                if (x > 242 && x < 517 && y > 150 && y < 200) {
+                if (x > 168 && x < 567 && y > 180 && y < 250) {
                     Greenfoot.setWorld (new Background());
                 }
             }
         }
+    }
+    
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        
     }
 }
