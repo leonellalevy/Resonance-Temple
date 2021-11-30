@@ -43,11 +43,11 @@ public class Bob extends SmoothMover
     {
         if (Greenfoot.isKeyDown("up")) {
             setLocation(getX(), getY() - 3);
-            rotation = 90;
+            rotation =270;
         }
         else if (Greenfoot.isKeyDown("down")) {
             setLocation(getX(), getY() + 3);
-            rotation = 270;
+            rotation = 90;
         }
         else if (Greenfoot.isKeyDown("right")) {
             setLocation(getX() + 3, getY());
@@ -59,8 +59,8 @@ public class Bob extends SmoothMover
         }
         if(isTouching(Snake.class))
         {
-            Background background= (Background)getWorld();
-            background.removeLives();
+            FirstLevel firstLevel= (FirstLevel)getWorld();
+            firstLevel.removeLives();
             removeTouching(Snake.class);
         }
         if (Greenfoot.isKeyDown("space") && isImageSet)

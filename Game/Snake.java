@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Snake extends Actor
 {
     private int value = 2;
+    private int pointSnake = 4;
     /**
      * Act - do whatever the Snake wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -37,7 +38,12 @@ public void killSnake()
         if (value == 0) 
         {
             getWorld().removeObject(this);
+            pointSnake--;
         }
+    }
+    if (pointSnake==0)
+    {
+        //Greenfoot.showText("GOOD JOB, YOU WIN! Click 'enter' to go the the second level",300,330);
     }
 }
 }

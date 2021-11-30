@@ -6,14 +6,14 @@ import java.util.List;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Background extends World
+public class FirstLevel extends World
 {
     private int lives;
     /**
      * Constructor for objects of class Background.
      * 
      */
-    public Background()
+    public FirstLevel()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
@@ -41,7 +41,6 @@ public class Background extends World
         Bob bob = new Bob();
         addObject(bob,291,197);
     }
-
     public void removeLives()
        {
           lives--;

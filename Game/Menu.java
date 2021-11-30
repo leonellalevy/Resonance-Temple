@@ -31,8 +31,11 @@ public class Menu extends World
             int y = mouse.getY();
 
             if (Greenfoot.mouseClicked(null)) {
-                if (x > 242 && x < 517 && y > 150 && y < 200) {
-                    Greenfoot.setWorld (new Background());
+                if (x > 240 && x < 517 && y > 150 && y < 200) {
+                    Greenfoot.setWorld (new FirstLevel());
+                }
+                if (x > 240 && x < 517 && y > 256 && y < 307) {
+                    Greenfoot.setWorld (new Instruction());
                 }
             }
         }
@@ -44,6 +47,6 @@ public class Menu extends World
      */
     private void prepare()
     {
-        
+
     }
 }
