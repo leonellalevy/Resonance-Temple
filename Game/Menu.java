@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Menu extends World
 {
+    public static GreenfootSound music = new GreenfootSound("RealBobChanson.wav");
     /**
      * Constructor for objects of class MenuPage.
      * 
@@ -24,6 +25,7 @@ public class Menu extends World
 
     public void act()
     {
+        music.playLoop();
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if (mouse != null) 
         {
