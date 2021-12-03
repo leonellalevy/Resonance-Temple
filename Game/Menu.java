@@ -15,7 +15,7 @@ public class Menu extends World
      */
     public Menu()
     {    
-        super(600, 400, 1); 
+        super(800, 600, 1); 
         GreenfootImage MenuPage = new GreenfootImage("GAME_MENU.png");
         MenuPage.scale (getWidth(), getHeight ());
         setBackground(MenuPage);
@@ -33,10 +33,10 @@ public class Menu extends World
             int y = mouse.getY();
 
             if (Greenfoot.mouseClicked(null)) {
-                if (x > 240 && x < 517 && y > 150 && y < 200) {
+                if (x > 315 && x < 690 && y > 222 && y < 300) {
                     Greenfoot.setWorld (new FirstLevel());
                 }
-                if (x > 240 && x < 517 && y > 256 && y < 307) {
+                if (x > 315 && x < 690 && y > 385 && y < 460) {
                     Greenfoot.setWorld (new Instruction());
                 }
             }

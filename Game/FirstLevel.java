@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
+//https://resizeimage.net/#google_vignette
 /**
  * Write a description of class Background here.
  * 
@@ -16,7 +17,7 @@ public class FirstLevel extends World
     public FirstLevel()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(800, 800, 1); 
         prepare();
         lives = 2;
         showLives();
@@ -28,19 +29,24 @@ public class FirstLevel extends World
      */
     private void prepare()
     {
-        Snake snake = new Snake();
-        addObject(snake,114,80);
-        Snake snake2 = new Snake();
-        addObject(snake2,431,77);
-        Snake snake3 = new Snake();
-        addObject(snake3,122,323);
-        Snake snake4 = new Snake();
-        addObject(snake4,421,318);
+        Skeleton skeleton = new Skeleton();
+        addObject(skeleton,114,80);
         Weapon weapon = new Weapon();
-        addObject(weapon,189,208);
+        addObject(weapon,89,211);
         Bob bob = new Bob();
-        addObject(bob,291,197);
+        addObject(bob,411,377);
+        Skeleton skeleton2 = new Skeleton();
+        addObject(skeleton2,670,108);
+        Skeleton skeleton3 = new Skeleton();
+        addObject(skeleton3,702,688);
+        Skeleton skeleton4 = new Skeleton();
+        addObject(skeleton4,157,555);
+        Skeleton skeleton5 = new Skeleton();
+        addObject(skeleton5,431,706);
+        Skeleton skeleton6 = new Skeleton();
+        addObject(skeleton6,408,178);
     }
+
     public void removeLives()
        {
           lives--;
@@ -50,12 +56,8 @@ public class FirstLevel extends World
                 Greenfoot.setWorld (new Die());   
              }  
        }
-    private void noObject()
-        {
-            
-        }
     private void showLives()
        {
-          showText("Lives:" + lives, 490, 30);    
+          showText("Lives:" + lives, 700, 50);    
        }
 }

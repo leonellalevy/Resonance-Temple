@@ -48,6 +48,7 @@ public abstract class SmoothMover extends Actor
         }
         super.setLocation((int) exactX, (int) exactY);
     }
+ 
     
     /**
      * Set the location using exact (double) co-ordinates.

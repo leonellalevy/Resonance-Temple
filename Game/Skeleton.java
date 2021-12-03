@@ -1,19 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Snake here.
+ * Write a description of class Skeleton here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Snake extends Actor
+public class Skeleton extends Actor
 {
-    private int value = 2;
-    private int pointSnake = 4;
+    private int value = 0;
+    private int numSkeleton = 0;
     /**
-     * Act - do whatever the Snake wants to do. This method is called whenever
+     * Act - do whatever the Skeleton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public Skeleton()
+    {
+        GreenfootImage image = getImage();
+        image.scale(image.getWidth()*1/4, image.getHeight()*1/4);
+    }
     public void act()
     {
         int rnd = Greenfoot.getRandomNumber(20);
@@ -25,25 +30,20 @@ public class Snake extends Actor
             turn(45);
         } else{
         move(2);
+        }
+        killSkeleton();
     }
-    killSnake();
-}
-public void killSnake()
-{ 
+    public void killSkeleton()
     {
         if (isTouching(Bullet.class))
         {
-            value--;
-        }
-        if (value == 0) 
-        {
             getWorld().removeObject(this);
-            pointSnake--;
+            numSkeleton++;
+        }
+        if (numSkeleton==5)
+        {
+            getWorld().showText("GOOD JOB, YOU WIN! Click 'enter' to go the the second level",300,330);
+            Greenfoot.stop();
         }
     }
-    if (pointSnake==0)
-    {
-        //Greenfoot.showText("GOOD JOB, YOU WIN! Click 'enter' to go the the second level",300,330);
-    }
-}
 }

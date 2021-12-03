@@ -15,7 +15,7 @@ public class Die extends World
      */
     public Die()
     {    
-        super(600, 400, 1); 
+        super(800, 600, 1); 
         GreenfootImage MenuPage = new GreenfootImage("GAME_END.png");
         MenuPage.scale (getWidth(), getHeight ());
         setBackground(MenuPage);
@@ -32,7 +32,7 @@ public class Die extends World
             int y = mouse.getY();
 
             if (Greenfoot.mouseClicked(null)) {
-                if (x > 168 && x < 567 && y > 180 && y < 250) {
+                if (x > 223 && x < 746 && y > 270 && y < 371) {
                     Greenfoot.setWorld (new FirstLevel());
                 }
             }
@@ -45,6 +45,6 @@ public class Die extends World
      */
     private void prepare()
     {
-        
+
     }
 }

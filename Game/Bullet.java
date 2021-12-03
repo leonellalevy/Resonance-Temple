@@ -13,18 +13,13 @@ public class Bullet extends SmoothMover
     public Bullet()
     {
     }
-    
     public Bullet(Vector speed, int rotation)
     {
         super(speed);
         setRotation(rotation);
         addToVelocity(new Vector(rotation, 15));
     }
-    
-    /**
-     * The bullet will damage asteroids if it hits them.
-     */
-    public void act()
+        public void act()
     {
         if(life <= 0) {
             getWorld().removeObject(this);
@@ -34,10 +29,5 @@ public class Bullet extends SmoothMover
             move();
         }
     }
-    
-    
-    /**
-     * Check whether we have hit an asteroid.
-     */
 }
 

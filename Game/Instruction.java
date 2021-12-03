@@ -16,7 +16,7 @@ public class Instruction extends World
     public Instruction()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(800, 600, 1); 
         GreenfootImage MenuPage = new GreenfootImage("GAME_INSTRUCTIONS.png");
         MenuPage.scale (getWidth(), getHeight ());
         setBackground(MenuPage);
@@ -25,7 +25,7 @@ public class Instruction extends World
     }
 
     private void returnMenu(){
-        showText("Click 'enter' to return to the main menu",300,330);
+        showText("Click 'enter' to return to the main menu",292,491);
     }
     public void act()
     {
@@ -34,8 +34,9 @@ public class Instruction extends World
             Greenfoot.setWorld (new Menu());
         }
     }
+    
     private void prepare()
     {
-        
+
     }
 }

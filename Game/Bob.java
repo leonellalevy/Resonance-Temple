@@ -8,11 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bob extends SmoothMover
 {
+    GreenfootImage ActorRight = new GreenfootImage("Explore2.png");
+    GreenfootImage ActorLeft = new GreenfootImage("ExploreLeft.png");
     GreenfootImage ActorWeapon = new GreenfootImage("boy2.png");
-    boolean isImageSet = false;
     
-    private static final int gunReloadTime = 5;         // The minimum delay between firing the gun.
-    private int reloadDelayCount;               // How long ago we fired the gun the last time.
+    private static final int gunReloadTime = 5; 
+    private int reloadDelayCount; 
+    
+    boolean isImageSet = false;
     private int rotation = 0;
     /**
      * Act - do whatever the Bob wants to do. This method is called whenever
@@ -21,7 +24,9 @@ public class Bob extends SmoothMover
     public Bob()
     {
         GreenfootImage image = getImage();
-        image.scale(image.getWidth()-630, image.getHeight()-630);
+        image.scale(image.getWidth()*1/7, image.getHeight()*1/7);
+        ActorRight.scale(ActorRight.getWidth()*1/7, ActorRight.getHeight()*1/7);
+        ActorLeft.scale(ActorLeft.getWidth()*1/7, ActorLeft.getHeight()*1/7);
         setImage(image);
         reloadDelayCount = 5;
         addToVelocity(new Vector(13, 0.7));
@@ -36,7 +41,7 @@ public class Bob extends SmoothMover
     }
     private void changeimage(GreenfootImage Image)
     {
-        setImage(Image); 
+        setImage(Image);
         isImageSet = true;
     }
     private void shift()
@@ -50,23 +55,25 @@ public class Bob extends SmoothMover
             rotation = 90;
         }
         else if (Greenfoot.isKeyDown("right")) {
+            setImage(ActorRight);
             setLocation(getX() + 3, getY());
             rotation = 0;
         }
         else if (Greenfoot.isKeyDown("left")) {
+            setImage(ActorLeft);
             setLocation(getX() - 3, getY());
             rotation = 180;
         }
-        if(isTouching(Snake.class))
+        if(isTouching(Skeleton.class))
         {
             FirstLevel firstLevel= (FirstLevel)getWorld();
             firstLevel.removeLives();
-            removeTouching(Snake.class);
+            removeTouching(Skeleton.class);
         }
-        if (Greenfoot.isKeyDown("space") && isImageSet)
+                if (Greenfoot.isKeyDown("space") && isImageSet)
         {
             fire(rotation);
-        }
+        }  
     }
     private void fire(int rotation)
     {
