@@ -17,6 +17,7 @@ public class Bob extends SmoothMover
     
     boolean isImageSet = false;
     private int rotation = 0;
+    
     /**
      * Act - do whatever the Bob wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -70,9 +71,10 @@ public class Bob extends SmoothMover
             firstLevel.removeLives();
             removeTouching(Skeleton.class);
         }
-                if (Greenfoot.isKeyDown("space") && isImageSet)
+        if (Greenfoot.isKeyDown("space") && isImageSet)
         {
             fire(rotation);
+            Greenfoot.playSound("gun.aiff");
         }  
     }
     private void fire(int rotation)

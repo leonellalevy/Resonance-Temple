@@ -22,7 +22,17 @@ public class FirstLevel extends World
         lives = 2;
         showLives();
     }
-    
+    public void act(){
+        int skeletons = getObjects(Skeleton.class).size();
+        if (skeletons==0){
+            showText("GOOD JOB, YOU WIN! Click 'enter' to go the the second level",400,400);
+                if(Greenfoot.isKeyDown("Enter"))
+            {
+                Greenfoot.setWorld (new SecondLevel());
+            }
+        }
+
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -46,10 +56,10 @@ public class FirstLevel extends World
         Skeleton skeleton6 = new Skeleton();
         addObject(skeleton6,408,178);
     }
-
     public void removeLives()
        {
           lives--;
+          Greenfoot.playSound("hurtSound.wav");
           showLives();
           if( lives == 0 )
              {

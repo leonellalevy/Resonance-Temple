@@ -8,8 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Skeleton extends Actor
 {
-    private int value = 0;
-    private int numSkeleton = 0;
+    private int value = 2;
     /**
      * Act - do whatever the Skeleton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -37,13 +36,12 @@ public class Skeleton extends Actor
     {
         if (isTouching(Bullet.class))
         {
-            getWorld().removeObject(this);
-            numSkeleton++;
-        }
-        if (numSkeleton==5)
-        {
-            getWorld().showText("GOOD JOB, YOU WIN! Click 'enter' to go the the second level",300,330);
-            Greenfoot.stop();
+            value--;
+            removeTouching(Bullet.class);
+            if(value==0){
+               getWorld().removeObject(this); 
+               Greenfoot.playSound("diesound.wav");
+            }
         }
     }
 }
