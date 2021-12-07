@@ -67,7 +67,7 @@ public class Bob extends SmoothMover
             setLocation(getX() - 3, getY());
             rotation = 180;
         }
-                if (Greenfoot.isKeyDown("up")&&isImageSet) {
+        if (Greenfoot.isKeyDown("up")&&isImageSet) {
             setLocation(getX(), getY() - 3);
             rotation =270;
         }

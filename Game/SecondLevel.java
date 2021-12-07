@@ -21,16 +21,16 @@ public class SecondLevel extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1);
-        showMelody();
+        //showMelody();
         prepare();
     }
 
-    private void showMelody(){
-        showText("Melody:",200,320); 
-        for (int i=0; i< melody.length; i++){
-            showText (" " +melody[i], 300 + i*50,  320);
-        }
-    }
+    //private void showMelody(){
+    //    showText("Melody:",200,320); 
+    //    for (int i=0; i< melody.length; i++){
+    //        showText (" " +melody[i], 300 + i*50,  320);
+    //   }
+    //}
     /*public void checkMelody(Key k){
     if(points==0&& k.getKey().equals(melody_keyboard[0])){
     points++; 
@@ -96,5 +96,8 @@ public class SecondLevel extends World
         lever3.setLocation(434,175);
         lever4.setLocation(551,177);
         lever5.setLocation(677,176);
+        Book book = new Book();
+        addObject(book,309,408);
+        book.setLocation(453,524);
     }
 }

@@ -33,6 +33,7 @@ public class FirstLevel extends World
         }
 
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -55,7 +56,25 @@ public class FirstLevel extends World
         addObject(skeleton5,431,706);
         Skeleton skeleton6 = new Skeleton();
         addObject(skeleton6,408,178);
+        GreenJewel greenJewel = new GreenJewel();
+        addObject(greenJewel,185,93);
+        GreenJewel greenJewel2 = new GreenJewel();
+        addObject(greenJewel2,165,688);
+        greenJewel2.setLocation(272,693);
+        RedJewel redJewel = new RedJewel();
+        addObject(redJewel,559,90);
+        RedJewel redJewel2 = new RedJewel();
+        addObject(redJewel2,483,580);
+        BlueJewel blueJewel = new BlueJewel();
+        addObject(blueJewel,90,360);
+        BlueJewel blueJewel2 = new BlueJewel();
+        addObject(blueJewel2,662,509);
+        redJewel2.setLocation(566,649);
+        blueJewel2.setLocation(741,402);
+        redJewel.setLocation(545,131);
+        blueJewel.setLocation(186,375);
     }
+
     public void removeLives()
        {
           lives--;
