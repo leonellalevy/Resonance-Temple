@@ -10,8 +10,8 @@ public class Bob extends SmoothMover
 {
     GreenfootImage ActorRight = new GreenfootImage("Explore2.png");
     GreenfootImage ActorLeft = new GreenfootImage("ExploreLeft.png");
-    GreenfootImage ActorWeapon = new GreenfootImage("boy2.png");
-    
+    GreenfootImage ActorWeaponRight = new GreenfootImage("CharWithGunRight.png");
+    GreenfootImage ActorWeaponLeft = new GreenfootImage("CharWithGunLeft.png");
     private static final int gunReloadTime = 5; 
     private int reloadDelayCount; 
     
@@ -28,6 +28,8 @@ public class Bob extends SmoothMover
         image.scale(image.getWidth()*1/7, image.getHeight()*1/7);
         ActorRight.scale(ActorRight.getWidth()*1/7, ActorRight.getHeight()*1/7);
         ActorLeft.scale(ActorLeft.getWidth()*1/7, ActorLeft.getHeight()*1/7);
+        ActorWeaponRight.scale(ActorWeaponRight.getWidth()*1/7, ActorWeaponRight.getHeight()*1/7);
+        ActorWeaponLeft.scale(ActorWeaponLeft.getWidth()*1/7, ActorWeaponLeft.getHeight()*1/7);
         setImage(image);
         reloadDelayCount = 5;
         addToVelocity(new Vector(13, 0.7));
@@ -36,7 +38,7 @@ public class Bob extends SmoothMover
     {
         shift();
         if (isTouching(Weapon.class)){
-            changeimage(ActorWeapon);
+            changeimage(ActorWeaponRight);
         }
         reloadDelayCount++;
     }
@@ -47,21 +49,39 @@ public class Bob extends SmoothMover
     }
     private void shift()
     {
-        if (Greenfoot.isKeyDown("up")) {
+        if (Greenfoot.isKeyDown("up")&&!isImageSet) {
             setLocation(getX(), getY() - 3);
             rotation =270;
         }
-        else if (Greenfoot.isKeyDown("down")) {
+        else if (Greenfoot.isKeyDown("down")&&!isImageSet) {
             setLocation(getX(), getY() + 3);
             rotation = 90;
         }
-        else if (Greenfoot.isKeyDown("right")) {
+        else if (Greenfoot.isKeyDown("right")&&!isImageSet) {
             setImage(ActorRight);
             setLocation(getX() + 3, getY());
             rotation = 0;
         }
-        else if (Greenfoot.isKeyDown("left")) {
+        else if (Greenfoot.isKeyDown("left")&&!isImageSet) {
             setImage(ActorLeft);
+            setLocation(getX() - 3, getY());
+            rotation = 180;
+        }
+                if (Greenfoot.isKeyDown("up")&&isImageSet) {
+            setLocation(getX(), getY() - 3);
+            rotation =270;
+        }
+        else if (Greenfoot.isKeyDown("down")&&isImageSet) {
+            setLocation(getX(), getY() + 3);
+            rotation = 90;
+        }
+        else if (Greenfoot.isKeyDown("right")&&isImageSet) {
+            setImage(ActorWeaponRight);
+            setLocation(getX() + 3, getY());
+            rotation = 0;
+        }
+        else if (Greenfoot.isKeyDown("left")&&isImageSet) {
+            setImage(ActorWeaponLeft);
             setLocation(getX() - 3, getY());
             rotation = 180;
         }
@@ -75,15 +95,16 @@ public class Bob extends SmoothMover
         {
             fire(rotation);
             Greenfoot.playSound("gun.aiff");
-        }  
+        }
+        
     }
     private void fire(int rotation)
     {
         if (reloadDelayCount >= gunReloadTime) 
         {
-            Bullet bullet = new Bullet (getVelocity(), rotation);
-            getWorld().addObject (bullet, getX(), getY());
-            bullet.move ();
+            BulletGun bulletGun = new BulletGun (getVelocity(), rotation);
+            getWorld().addObject (bulletGun, getX(), getY());
+            bulletGun.move ();
             reloadDelayCount = 0;
         }
     }

@@ -20,7 +20,7 @@ public class SecondLevel extends World
     public SecondLevel()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(800, 800, 1);
         showMelody();
         prepare();
     }
@@ -71,5 +71,30 @@ public class SecondLevel extends World
     {
         Bob bob = new Bob();
         addObject(bob,50,151);
+        Lever lever = new Lever();
+        addObject(lever,443,167);
+        lever.setLocation(426,161);
+        lever.setLocation(221,139);
+        lever.setLocation(223,169);
+        Lever lever2 = new Lever();
+        addObject(lever2,367,145);
+        lever2.setLocation(346,175);
+        Lever lever3 = new Lever();
+        addObject(lever3,500,146);
+        lever3.setLocation(468,178);
+        lever.setLocation(209,173);
+        lever2.setLocation(306,175);
+        lever3.setLocation(437,174);
+        Lever lever4 = new Lever();
+        addObject(lever4,604,158);
+        lever4.setLocation(551,173);
+        Lever lever5 = new Lever();
+        addObject(lever5,704,152);
+        lever5.setLocation(670,172);
+        lever.setLocation(200,175);
+        lever2.setLocation(315,177);
+        lever3.setLocation(434,175);
+        lever4.setLocation(551,177);
+        lever5.setLocation(677,176);
     }
 }

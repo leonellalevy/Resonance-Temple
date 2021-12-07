@@ -1,19 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bullet here.
+ * Write a description of class BulletGun here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends SmoothMover
+public class BulletGun extends SmoothMover
 {
     private int life = 30;
     private int damage = 2;
-    public Bullet()
+    public BulletGun()
     {
+
     }
-    public Bullet(Vector speed, int rotation)
+    public BulletGun(Vector speed, int rotation)
     {
         super(speed);
         setRotation(rotation);
@@ -30,4 +31,3 @@ public class Bullet extends SmoothMover
         }
     }
 }
-

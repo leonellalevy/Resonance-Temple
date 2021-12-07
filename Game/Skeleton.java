@@ -34,10 +34,10 @@ public class Skeleton extends Actor
     }
     public void killSkeleton()
     {
-        if (isTouching(Bullet.class))
+        if (isTouching(BulletGun.class))
         {
             value--;
-            removeTouching(Bullet.class);
+            removeTouching(BulletGun.class);
             if(value==0){
                getWorld().removeObject(this); 
                Greenfoot.playSound("diesound.wav");

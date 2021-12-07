@@ -1,43 +1,39 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Die here.
+ * Write a description of class Win here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Die extends World
+public class Win extends World
 {
+
     /**
-     * Constructor for objects of class Die.
+     * Constructor for objects of class Win.
      * 
      */
-    public Die()
+    public Win()
     {    
         super(800, 600, 1); 
-        GreenfootImage MenuPage = new GreenfootImage("GAME_END.png");
+        GreenfootImage MenuPage = new GreenfootImage("GAME_WIN.png");
         MenuPage.scale (getWidth(), getHeight ());
         setBackground(MenuPage);
 
         prepare();
+        returnMenu();
     }
 
     public void act()
     {
-        MouseInfo mouse = Greenfoot.getMouseInfo();
-        if (mouse != null) 
+        if(Greenfoot.isKeyDown("Enter"))
         {
-            int x = mouse.getX();
-            int y = mouse.getY();
-
-            if (Greenfoot.mouseClicked(null)) {
-                if (x > 223 && x < 746 && y > 270 && y < 371) {
-                    Greenfoot.setWorld (new FirstLevel());
-                }
-            }
+            Greenfoot.setWorld (new Menu());
         }
     }
-    
+        private void returnMenu(){
+        showText("Click 'enter' to return to the main menu",600,491);
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
