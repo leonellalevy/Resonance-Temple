@@ -73,8 +73,6 @@ public class SecondLevel extends World
         addObject(bob,50,151);
         Lever lever = new Lever();
         addObject(lever,443,167);
-        lever.setLocation(426,161);
-        lever.setLocation(221,139);
         lever.setLocation(223,169);
         Lever lever2 = new Lever();
         addObject(lever2,367,145);
@@ -87,17 +85,14 @@ public class SecondLevel extends World
         lever3.setLocation(437,174);
         Lever lever4 = new Lever();
         addObject(lever4,604,158);
-        lever4.setLocation(551,173);
         Lever lever5 = new Lever();
         addObject(lever5,704,152);
-        lever5.setLocation(670,172);
         lever.setLocation(200,175);
         lever2.setLocation(315,177);
         lever3.setLocation(434,175);
         lever4.setLocation(551,177);
         lever5.setLocation(677,176);
         Book book = new Book();
-        addObject(book,309,408);
-        book.setLocation(453,524);
+        addObject(book,411,525);
     }
 }

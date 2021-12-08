@@ -10,6 +10,7 @@ import java.util.List;
 public class FirstLevel extends World
 {
     private int lives;
+    public int numDiamonds;
     /**
      * Constructor for objects of class Background.
      * 
@@ -25,15 +26,17 @@ public class FirstLevel extends World
     public void act(){
         int skeletons = getObjects(Skeleton.class).size();
         if (skeletons==0){
-            showText("GOOD JOB, YOU WIN! Click 'enter' to go the the second level",400,400);
-                if(Greenfoot.isKeyDown("Enter"))
+            showText("GOOD JOB, YOU WIN!   Click 'enter' to go the the second level",400,400);
+            removeObjects(getObjects(null));
+            Bob bob = new Bob(); 
+            addObject(bob,411,377);
+            if(Greenfoot.isKeyDown("Enter"))
             {
                 Greenfoot.setWorld (new SecondLevel());
             }
         }
 
     }
-    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -74,7 +77,6 @@ public class FirstLevel extends World
         redJewel.setLocation(545,131);
         blueJewel.setLocation(186,375);
     }
-
     public void removeLives()
        {
           lives--;
@@ -89,4 +91,12 @@ public class FirstLevel extends World
        {
           showText("Lives:" + lives, 700, 50);    
        }
+    public int getLives()
+    {
+          return lives;
+    }
+    public int getJewels()
+    {
+          return numDiamonds;
+    }
 }

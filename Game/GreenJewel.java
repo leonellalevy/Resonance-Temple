@@ -7,13 +7,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class GreenJewel extends Actor
-{
-
-    public GreenJewel(){
-      
-    }
-         
+{  
+    private int timer=0;
     public void act(){
-
+        timer++;
+        if(timer==30){
+            int rnd = Greenfoot.getRandomNumber(4);
+            if(rnd==0){
+                setLocation(getX()+60, getY());
+            }
+            else if(rnd==1){
+                setLocation(getX()-60, getY());
+            }
+            else if(rnd==2){
+                setLocation(getX(), getY() + 60);
+            }
+            else if(rnd==3){
+                setLocation(getX(), getY() - 60);
+            }
+            timer=0;
+        }
     }
 }
