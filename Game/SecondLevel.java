@@ -11,6 +11,9 @@ public class SecondLevel extends World
     private int points = 0;
     private int trials = 3;
 
+    private int jewels;
+    private int lives;
+    
     private String [] melody = {"C", "C", "D", "C", "F", "E"};
     private String [] melody_keyboard = {"A", "A", "S", "A", "F", "D"};
     /**
@@ -24,7 +27,30 @@ public class SecondLevel extends World
         //showMelody();
         prepare();
     }
-
+    public void removeLives()
+       {
+          lives--;
+          Greenfoot.playSound("hurtSound.wav");
+          showLives();
+          if( lives == 0 )
+             {
+                Greenfoot.setWorld (new Die());   
+             }  
+       }
+    public void removeJewels()
+       {
+          jewels--;
+          Greenfoot.playSound("Ding.wav");
+          showJewels();
+       }
+    private void showLives()
+       {
+          showText("Lives:" + lives, 700, 25);    
+       }
+    private void showJewels()
+       {
+          showText("Jewels:" + jewels, 700, 50);    
+       }
     //private void showMelody(){
     //    showText("Melody:",200,320); 
     //    for (int i=0; i< melody.length; i++){

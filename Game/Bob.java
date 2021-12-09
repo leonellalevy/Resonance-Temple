@@ -115,21 +115,18 @@ public class Bob extends SmoothMover
     public void lookForDiamonds(){
         if (isTouching(BlueJewel.class)){
             removeTouching(BlueJewel.class);
-            Greenfoot.playSound ("Ding.wav");
-            jewels++;
-            getWorld().showText("Jewels : " + jewels,710,20);
+            FirstLevel firstLevel= (FirstLevel)getWorld();
+            firstLevel.removeJewels();
         }    
         if (isTouching(GreenJewel.class)){
             removeTouching(GreenJewel.class);
-            Greenfoot.playSound ("Ding.wav");
-            jewels++;
-            getWorld().showText("Jewels : " + jewels,710,20);
+            FirstLevel firstLevel= (FirstLevel)getWorld();
+            firstLevel.removeJewels();
         }
         if (isTouching(RedJewel.class)){
             removeTouching(RedJewel.class);
-            Greenfoot.playSound ("Ding.wav");
-            jewels++;
-            getWorld().showText("Jewels : " + jewels,710,20);
+            FirstLevel firstLevel= (FirstLevel)getWorld();
+            firstLevel.removeJewels();
         }
     }
     private void fire(int rotation)

@@ -1,5 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
+import greenfoot.World;
+
 //https://resizeimage.net/#google_vignette
 /**
  * Write a description of class Background here.
@@ -10,7 +12,7 @@ import java.util.List;
 public class FirstLevel extends World
 {
     private int lives;
-    public int numDiamonds;
+    public int jewels;
     /**
      * Constructor for objects of class Background.
      * 
@@ -21,7 +23,9 @@ public class FirstLevel extends World
         super(800, 800, 1); 
         prepare();
         lives = 2;
+        jewels = 0;
         showLives();
+        showJewels();
     }
     public void act(){
         int skeletons = getObjects(Skeleton.class).size();
@@ -32,7 +36,8 @@ public class FirstLevel extends World
             addObject(bob,411,377);
             if(Greenfoot.isKeyDown("Enter"))
             {
-                Greenfoot.setWorld (new SecondLevel());
+                World Level2 = new SecondLevel();
+                Greenfoot.setWorld (Level2);
             }
         }
 
@@ -87,9 +92,19 @@ public class FirstLevel extends World
                 Greenfoot.setWorld (new Die());   
              }  
        }
+    public void removeJewels()
+       {
+          jewels++;
+          Greenfoot.playSound("Ding.wav");
+          showJewels();
+       }
     private void showLives()
        {
-          showText("Lives:" + lives, 700, 50);    
+          showText("Lives:" + lives, 700, 25);    
+       }
+    private void showJewels()
+       {
+          showText("Jewels:" + jewels, 700, 50);    
        }
     public int getLives()
     {
@@ -97,6 +112,6 @@ public class FirstLevel extends World
     }
     public int getJewels()
     {
-          return numDiamonds;
+          return jewels;
     }
 }
