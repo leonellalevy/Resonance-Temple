@@ -11,19 +11,22 @@ import greenfoot.World;
  */
 public class FirstLevel extends World
 {
-    public static int lives;
-    public static int jewels;
+    public int lives;
+    public int jewels;
+    
+    private int timer;
     /**
      * Constructor for objects of class Background.
      * 
      */
-    public FirstLevel()
+    public FirstLevel(int lives,int jewels)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1); 
         prepare();
         lives = 3;
-        jewels = 0;
+        this.lives=lives;
+        this.jewels=jewels;
         showLives();
         showJewels();
     }
@@ -36,13 +39,11 @@ public class FirstLevel extends World
             addObject(bob,411,377);
             if(Greenfoot.isKeyDown("Enter"))
             {
-                World Level2 = new SecondLevel();
+                World Level2 = new SecondLevel(lives, jewels);
                 Greenfoot.setWorld (Level2);
             }
         }
-
     }
-    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

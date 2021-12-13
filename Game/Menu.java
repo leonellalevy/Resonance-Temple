@@ -31,10 +31,10 @@ public class Menu extends World
         {
             int x = mouse.getX();
             int y = mouse.getY();
-
             if (Greenfoot.mouseClicked(null)) {
                 if (x > 315 && x < 690 && y > 222 && y < 300) {
-                    Greenfoot.setWorld (new FirstLevel());
+                    World Level1 = new FirstLevel(3,0);
+                    Greenfoot.setWorld (Level1); 
                 }
                 if (x > 315 && x < 690 && y > 385 && y < 460) {
                     Greenfoot.setWorld (new Instruction());

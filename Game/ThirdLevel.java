@@ -8,24 +8,32 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ThirdLevel extends World
 {
-    public static int jewels = SecondLevel.jewels;
-    public static int lives = SecondLevel.lives;
+    public int jewels;
+    public int lives;
+    
     public int timer;
     /**
      * Constructor for objects of class ThirdLevel.
      * 
      */
-    public ThirdLevel()
+    public ThirdLevel(int lives, int jewels)
     {    
         super(800, 800, 1);
+        this.jewels=jewels;
+        this.lives=lives;
         timer =2000;
+        showJewels();
+        showLives();
         prepare();
     }
     public void act(){
         timer--;
-        showText(""+timer, 50, 50);
+        showText("Timer: "+timer, 100, 50);
+        diamond();
     }
-    
+    private void diamond(){
+        showText("Time = diamonds, Press on 'T' for more time!", 400, 200);
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -70,5 +78,9 @@ public class ThirdLevel extends World
     private void showLives()
        {
           showText("Lives:" + lives, 700, 25);    
+       }
+    private void showJewels()
+       {
+          showText("Jewels:" + jewels, 700, 50);    
        }
 }

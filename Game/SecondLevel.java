@@ -8,23 +8,38 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SecondLevel extends World
 {
-    public static int jewels = FirstLevel.jewels;
-    public static int lives= FirstLevel.lives;
+    public int jewels;
+    public int lives;
     
+    public int timer;
     private int lever;
     /**
      * Constructor for objects of class SecondLevel.
      * 
      */
-    public SecondLevel()
+    public SecondLevel(int lives, int jewels)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1);
+        this.jewels=jewels;
+        this.lives=lives;
         prepare();
         showJewels();
+        showLives();
+        timer =500;
         lever=0;
     }
     public void act(){
+        timer--;
+        showText("Timer: "+timer, 100, 50);
+        if(timer==0){
+            removeLives();
+            Greenfoot.setWorld(new SecondLevel(lives, jewels));
+            if( lives == 0 )
+            {
+                Greenfoot.setWorld (new Die());   
+            }  
+        }
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if (mouse != null) 
         {
@@ -34,23 +49,18 @@ public class SecondLevel extends World
             if (Greenfoot.mouseClicked(null)) {
                 if (x > 612 && x < 637 && y > 647 && y < 671) {
                     if(lever==0){
-                            World Level3 = new ThirdLevel();
+                            World Level3 = new ThirdLevel(lives,jewels);
                             Greenfoot.setWorld (Level3); 
                     }
                     else{
-                            Greenfoot.setWorld (new Die());
+                            removeLives();
+                            Greenfoot.setWorld(new SecondLevel(lives, jewels));
+                         if( lives == 0 )
+                         {
+                            Greenfoot.setWorld (new Die());   
+                         }  
                         }
                 }
-            }
-        }
-        if(Greenfoot.isKeyDown("enter"))
-        {
-            if(lever==5){
-                World Level3 = new ThirdLevel();
-                Greenfoot.setWorld (Level3);
-            }
-            else{
-                Greenfoot.setWorld (new Die());
             }
         }
     }
@@ -62,10 +72,6 @@ public class SecondLevel extends World
           lives--;
           Greenfoot.playSound("hurtSound.wav");
           showLives();
-          if( lives == 0 )
-             {
-                Greenfoot.setWorld (new Die());   
-             }  
        }
     public void removeJewels()
        {

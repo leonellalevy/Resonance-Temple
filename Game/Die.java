@@ -32,7 +32,7 @@ public class Die extends World
 
             if (Greenfoot.mouseClicked(null)) {
                 if (x > 223 && x < 746 && y > 270 && y < 371) {
-                    Greenfoot.setWorld (new FirstLevel());
+                    Greenfoot.setWorld (new FirstLevel(3,0));
                 }
             }
         }
