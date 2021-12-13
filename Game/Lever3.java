@@ -21,11 +21,11 @@ public class Lever3 extends Actor
     {
         if (Greenfoot.isKeyDown("C")) {
             setImage(LeverRight);
+            SecondLevel secondLevel= (SecondLevel)getWorld();
+            secondLevel.pointLever();
         }
         else if (Greenfoot.isKeyDown("A")) {
             setImage(LeverLeft);
-            SecondLevel secondLevel= (SecondLevel)getWorld();
-            secondLevel.pointLever();
         }
     }
 }

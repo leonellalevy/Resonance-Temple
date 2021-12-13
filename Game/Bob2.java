@@ -10,6 +10,7 @@ public class Bob2 extends SmoothMover
 {
     GreenfootImage ActorRight = new GreenfootImage("Explore2.png");
     GreenfootImage ActorLeft = new GreenfootImage("ExploreLeft.png");
+    
     GreenfootImage ActorWeaponRight = new GreenfootImage("CharWithGunRight.png");
     GreenfootImage ActorWeaponLeft = new GreenfootImage("CharWithGunLeft.png");
     public Bob2(){
@@ -31,27 +32,27 @@ public class Bob2 extends SmoothMover
         if(isTouching(Lever.class))
         {
             getWorld().showText("Question 1",410,250);
-            getWorld().showText("Press on key 'B' or key 'Z'",410,650);
+            getWorld().addObject(new Question1(), 400, 500);
         }
         else if(isTouching(Lever2.class))
         {
             getWorld().showText("Question 2",410,250);
-            getWorld().showText("Press on key 'H' or key 'L'",410,650);
+            getWorld().addObject(new Question2(), 400, 500);
         }
         else if(isTouching(Lever3.class))
         {
             getWorld().showText("Question 3",410,250);
-            getWorld().showText("Press on key 'C' or key 'A'",410,650);
+            getWorld().addObject(new Question3(), 400, 500);
         }
         else if(isTouching(Lever4.class))
         {
             getWorld().showText("Question 4",410,250);
-            getWorld().showText("Press on key 'D' or key 'M'",410,650);
+            getWorld().addObject(new Question4(), 400, 500);
         }
         else if(isTouching(Lever5.class))
         {
             getWorld().showText("Question 5",410,250);
-            getWorld().showText("Press on key 'P' or key 'E'",410,650);
+            getWorld().addObject(new Question5(), 400, 500);
         }
     }
     private void moveA(){

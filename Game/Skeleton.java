@@ -28,7 +28,7 @@ public class Skeleton extends Actor
         } else if(rnd==1) {
             turn(45);
         } else{
-        move(3);
+        move(5/2);
         }
         killSkeleton();
     }

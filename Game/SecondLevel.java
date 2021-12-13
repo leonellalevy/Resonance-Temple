@@ -33,15 +33,13 @@ public class SecondLevel extends World
 
             if (Greenfoot.mouseClicked(null)) {
                 if (x > 612 && x < 637 && y > 647 && y < 671) {
-                     showText("Lives:" + lever, 700, 125); 
-                    /*    if(lever==0){
+                    if(lever==0){
                             World Level3 = new ThirdLevel();
-                            Greenfoot.setWorld (Level3);
+                            Greenfoot.setWorld (Level3); 
                     }
                     else{
                             Greenfoot.setWorld (new Die());
                         }
-                        */
                 }
             }
         }

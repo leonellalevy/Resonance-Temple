@@ -10,17 +10,21 @@ public class ThirdLevel extends World
 {
     public static int jewels = SecondLevel.jewels;
     public static int lives = SecondLevel.lives;
+    private int timer;
     /**
      * Constructor for objects of class ThirdLevel.
      * 
      */
     public ThirdLevel()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1);
+        timer =10000;
         prepare();
     }
-    
+    public void act(){
+        timer--;
+        showText(""+timer, 50, 50);
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
