@@ -81,12 +81,6 @@ public class FirstLevel extends World
         redJewel2.setLocation(566,649);
         blueJewel2.setLocation(741,402);
         redJewel.setLocation(545,131);
-        blueJewel.setLocation(186,375);
-        skeleton3.setLocation(144,696);
-        skeleton5.setLocation(449,597);
-        skeleton4.setLocation(691,485);
-        skeleton6.setLocation(50,239);
-        skeleton2.setLocation(407,143);
     }
     public void removeLives()
        {

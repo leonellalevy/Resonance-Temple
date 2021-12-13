@@ -55,7 +55,7 @@ public class SecondLevel extends World
         }
     }
     public void pointLever(){
-        lever++;//key down is not 1, is time key down
+        lever++;
     }
     public void removeLives()
        {

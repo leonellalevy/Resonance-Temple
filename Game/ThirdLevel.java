@@ -10,7 +10,7 @@ public class ThirdLevel extends World
 {
     public static int jewels = SecondLevel.jewels;
     public static int lives = SecondLevel.lives;
-    private int timer;
+    public int timer;
     /**
      * Constructor for objects of class ThirdLevel.
      * 
@@ -18,45 +18,44 @@ public class ThirdLevel extends World
     public ThirdLevel()
     {    
         super(800, 800, 1);
-        timer =10000;
+        timer =2000;
         prepare();
     }
     public void act(){
         timer--;
         showText(""+timer, 50, 50);
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
     {
-        Bob bob = new Bob();
-        addObject(bob,406,391);
-        Weapon weapon = new Weapon();
-        addObject(weapon,Greenfoot.getRandomNumber(800),Greenfoot.getRandomNumber(800));
-        Skeleton skeleton = new Skeleton();
-        addObject(skeleton,139,145);
-        Skeleton skeleton2 = new Skeleton();
-        addObject(skeleton2,657,175);
-        skeleton.setLocation(144,93);
-        skeleton2.setLocation(665,215);
-        Skeleton skeleton3 = new Skeleton();
-        addObject(skeleton3,122,304);
-        skeleton3.setLocation(167,354);
-        Skeleton skeleton4 = new Skeleton();
-        addObject(skeleton4,673,553);
-        skeleton4.setLocation(653,508);
-        Skeleton skeleton5 = new Skeleton();
-        addObject(skeleton5,186,566);
-        skeleton5.setLocation(187,610);
-        Skeleton skeleton6 = new Skeleton();
-        addObject(skeleton6,643,692);
-        skeleton4.setLocation(620,471);
-        skeleton3.setLocation(148,280);
-        skeleton5.setLocation(174,571);
-        skeleton2.setLocation(674,201);
-        skeleton.setLocation(146,47);
+        Weapon2 weapon22 = new Weapon2();
+        addObject(weapon22,Greenfoot.getRandomNumber(800),Greenfoot.getRandomNumber(800));
+        Bob3 bob3 = new Bob3();
+        addObject(bob3,430,322);
+        bob3.setLocation(413,401);
+        Skeleton2 skeleton2 = new Skeleton2();
+        addObject(skeleton2,637,141);
+        Skeleton2 skeleton22 = new Skeleton2();
+        addObject(skeleton22,160,139);
+        Skeleton2 skeleton23 = new Skeleton2();
+        addObject(skeleton23,156,627);
+        Skeleton2 skeleton24 = new Skeleton2();
+        addObject(skeleton24,643,357);
+        Skeleton2 skeleton25 = new Skeleton2();
+        addObject(skeleton25,617,740);
+        Skeleton2 skeleton26 = new Skeleton2();
+        addObject(skeleton26,617,501);
+        skeleton23.setLocation(158,594);
+        skeleton26.setLocation(642,483);
+        skeleton24.setLocation(146,358);
+        skeleton2.setLocation(639,228);
+        skeleton24.setLocation(154,301);
+        skeleton22.setLocation(146,63);
+        skeleton2.setLocation(644,182);
     }
     public void removeLives()
        {

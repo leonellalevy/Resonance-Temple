@@ -42,7 +42,7 @@ public class Bob3 extends SmoothMover
     {
         shift();
         lookForDiamonds();
-        if (isTouching(Weapon.class)){
+        if (isTouching(Weapon2.class)){
             changeimage(ActorWeaponRight);
         }
         reloadDelayCount++;
@@ -56,11 +56,12 @@ public class Bob3 extends SmoothMover
     {
         moveNoGun();
         moveWithGun();
-        if(isTouching(Skeleton.class))
+        addKing();
+        if(isTouching(Skeleton2.class))
         {
             ThirdLevel thirdLevel= (ThirdLevel)getWorld();
             thirdLevel.removeLives();
-            removeTouching(Skeleton.class);
+            removeTouching(Skeleton2.class);
         }
         if(isTouching(Lever.class))
         {
@@ -93,7 +94,7 @@ public class Bob3 extends SmoothMover
         }
     }
     private void moveWithGun(){
-                if (Greenfoot.isKeyDown("up")&&isImageSet) {
+        if (Greenfoot.isKeyDown("up")&&isImageSet) {
             setLocation(getX(), getY() - 3);
             rotation =270;
         }
@@ -137,6 +138,12 @@ public class Bob3 extends SmoothMover
             getWorld().addObject (bulletGun, getX(), getY());
             bulletGun.move ();
             reloadDelayCount = 0;
+        }
+    }
+    public void addKing(){
+        int timer = ((ThirdLevel) getWorld()).timer;
+        if (timer==1500){
+            getWorld().addObject(new KingSkeleton(),1,1);
         }
     }
 }

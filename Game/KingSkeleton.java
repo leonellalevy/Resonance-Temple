@@ -15,10 +15,10 @@ public class KingSkeleton extends Actor
     }
     public void act()
     {
-        if (getWorld().getObjects(Bob.class).isEmpty()) return; 
-        Actor bob = (Actor)getWorld().getObjects(Bob.class).get(0); 
-        turnTowards(bob.getX(), bob.getY()); 
-        move(3/2);
+        move(2);
+        if (getWorld().getObjects(Bob3.class).isEmpty()) return; 
+        Actor bob3 = (Actor)getWorld().getObjects(Bob3.class).get(0); 
+        turnTowards(bob3.getX(), bob3.getY()); 
         killSkeleton();
     }
         public void killSkeleton()
@@ -28,8 +28,7 @@ public class KingSkeleton extends Actor
             value--;
             removeTouching(BulletGun.class);
             if(value==0){
-               getWorld().removeObject(this); 
-               Greenfoot.playSound("diesound.wav");
+               Greenfoot.setWorld (new Win());
             }
         }
     }
