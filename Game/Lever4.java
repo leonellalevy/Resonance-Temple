@@ -1,16 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Lever here.
+ * Write a description of class Lever4 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Lever extends Actor
+public class Lever4 extends Actor
 {
     GreenfootImage LeverLeft = new GreenfootImage("LeverLeft.png");
     GreenfootImage LeverRight = new GreenfootImage("LeverRight.png");
-    public Lever()
+    public Lever4()
     {
         GreenfootImage image = getImage();
         image.scale(image.getWidth()*1/4, image.getHeight()*1/4);
@@ -19,10 +19,10 @@ public class Lever extends Actor
     }
     public void act()
     {
-        if (Greenfoot.isKeyDown("B")) {
+        if (Greenfoot.isKeyDown("D")) {
             setImage(LeverRight);
         }
-        else if (Greenfoot.isKeyDown("Z")) {
+        else if (Greenfoot.isKeyDown("M")) {
             setImage(LeverLeft);
         }
     }

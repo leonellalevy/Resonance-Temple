@@ -11,11 +11,9 @@ public class SecondLevel extends World
     private int points = 0;
     private int trials = 3;
 
-    private int jewels;
-    private int lives;
+    public static int jewels = FirstLevel.jewels;
+    public static int lives= FirstLevel.lives;
     
-    private String [] melody = {"C", "C", "D", "C", "F", "E"};
-    private String [] melody_keyboard = {"A", "A", "S", "A", "F", "D"};
     /**
      * Constructor for objects of class SecondLevel.
      * 
@@ -24,8 +22,22 @@ public class SecondLevel extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1);
-        //showMelody();
         prepare();
+        showJewels();
+    }
+    public void act(){
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if (mouse != null) 
+        {
+            int x = mouse.getX();
+            int y = mouse.getY();
+
+            if (Greenfoot.mouseClicked(null)) {
+                if (x > 612 && x < 637 && y > 647 && y < 671) {
+                    showText("Are you sure about your answers?", 400, 400); 
+                }
+            }
+        }
     }
     public void removeLives()
        {
@@ -51,44 +63,7 @@ public class SecondLevel extends World
        {
           showText("Jewels:" + jewels, 700, 50);    
        }
-    //private void showMelody(){
-    //    showText("Melody:",200,320); 
-    //    for (int i=0; i< melody.length; i++){
-    //        showText (" " +melody[i], 300 + i*50,  320);
-    //   }
-    //}
-    /*public void checkMelody(Key k){
-    if(points==0&& k.getKey().equals(melody_keyboard[0])){
-    points++; 
-    }
-    else if (points==1&& k.getKey().equals(melody_keyboard[1])){
-    points++;
-    }
-    else if (points==2&& k.getKey().equals(melody_keyboard[2])){
-    points++;
-    }
-    else if (points==3&& k.getKey().equals(melody_keyboard[3])){
-    points++;
-    }
-    else if (points==4&& k.getKey().equals(melody_keyboard[4])){
-    points++;
-    }
-    else if (points==5&& k.getKey().equals(melody_keyboard[5])){
-    points++;
-    }
-    else {
-    trials--;
-    points=0;
-    }
-    if(points==6){
-    showText("WIN", 100, 320);
-    Greenfoot.stop(); 
-    }
-    if(trials==0){
-    showText("LOSE", 100, 320);
-    Greenfoot.stop(); 
-    }
-    }*/
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -98,27 +73,22 @@ public class SecondLevel extends World
         Bob bob = new Bob();
         addObject(bob,50,151);
         Lever lever = new Lever();
-        addObject(lever,443,167);
-        lever.setLocation(223,169);
-        Lever lever2 = new Lever();
-        addObject(lever2,367,145);
-        lever2.setLocation(346,175);
-        Lever lever3 = new Lever();
-        addObject(lever3,500,146);
-        lever3.setLocation(468,178);
-        lever.setLocation(209,173);
-        lever2.setLocation(306,175);
-        lever3.setLocation(437,174);
-        Lever lever4 = new Lever();
-        addObject(lever4,604,158);
-        Lever lever5 = new Lever();
-        addObject(lever5,704,152);
-        lever.setLocation(200,175);
-        lever2.setLocation(315,177);
-        lever3.setLocation(434,175);
-        lever4.setLocation(551,177);
-        lever5.setLocation(677,176);
+        addObject(lever,200,175);
+        Lever2 lever22 = new Lever2();
+        addObject(lever22,310,175);
+        Lever3 lever33 = new Lever3();
+        addObject(lever33,420,175);
+        Lever4 lever44 = new Lever4();
+        addObject(lever44,530,175);
+        Lever5 lever55 = new Lever5();
+        addObject(lever55,640,175);
         Book book = new Book();
         addObject(book,411,525);
+        removeObject(bob);
+        Bob2 bob2 = new Bob2();
+        addObject(bob2,138,177);
+        bob2.setLocation(38,177);
+        Button button = new Button();
+        addObject(button,625,660);
     }
 }

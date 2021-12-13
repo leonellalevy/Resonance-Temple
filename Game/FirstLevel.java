@@ -11,8 +11,8 @@ import greenfoot.World;
  */
 public class FirstLevel extends World
 {
-    private int lives;
-    public int jewels;
+    public static int lives;
+    public static int jewels;
     /**
      * Constructor for objects of class Background.
      * 
@@ -22,7 +22,7 @@ public class FirstLevel extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1); 
         prepare();
-        lives = 2;
+        lives = 3;
         jewels = 0;
         showLives();
         showJewels();
@@ -42,6 +42,7 @@ public class FirstLevel extends World
         }
 
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -49,21 +50,21 @@ public class FirstLevel extends World
     private void prepare()
     {
         Skeleton skeleton = new Skeleton();
-        addObject(skeleton,114,80);
+        addObject(skeleton,Greenfoot.getRandomNumber(800),80);
         Weapon weapon = new Weapon();
-        addObject(weapon,89,211);
+        addObject(weapon,Greenfoot.getRandomNumber(800),Greenfoot.getRandomNumber(800));
         Bob bob = new Bob();
         addObject(bob,411,377);
         Skeleton skeleton2 = new Skeleton();
-        addObject(skeleton2,670,108);
+        addObject(skeleton2,Greenfoot.getRandomNumber(800),108);
         Skeleton skeleton3 = new Skeleton();
-        addObject(skeleton3,702,688);
+        addObject(skeleton3,Greenfoot.getRandomNumber(800),688);
         Skeleton skeleton4 = new Skeleton();
-        addObject(skeleton4,157,555);
+        addObject(skeleton4,Greenfoot.getRandomNumber(800),555);
         Skeleton skeleton5 = new Skeleton();
-        addObject(skeleton5,431,706);
+        addObject(skeleton5,Greenfoot.getRandomNumber(800),706);
         Skeleton skeleton6 = new Skeleton();
-        addObject(skeleton6,408,178);
+        addObject(skeleton6,Greenfoot.getRandomNumber(800),178);
         GreenJewel greenJewel = new GreenJewel();
         addObject(greenJewel,185,93);
         GreenJewel greenJewel2 = new GreenJewel();
@@ -81,6 +82,11 @@ public class FirstLevel extends World
         blueJewel2.setLocation(741,402);
         redJewel.setLocation(545,131);
         blueJewel.setLocation(186,375);
+        skeleton3.setLocation(144,696);
+        skeleton5.setLocation(449,597);
+        skeleton4.setLocation(691,485);
+        skeleton6.setLocation(50,239);
+        skeleton2.setLocation(407,143);
     }
     public void removeLives()
        {
@@ -106,12 +112,4 @@ public class FirstLevel extends World
        {
           showText("Jewels:" + jewels, 700, 50);    
        }
-    public int getLives()
-    {
-          return lives;
-    }
-    public int getJewels()
-    {
-          return jewels;
-    }
 }
