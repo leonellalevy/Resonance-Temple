@@ -8,12 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SecondLevel extends World
 {
-    private int points = 0;
-    private int trials = 3;
-
     public static int jewels = FirstLevel.jewels;
     public static int lives= FirstLevel.lives;
     
+    private int lever;
     /**
      * Constructor for objects of class SecondLevel.
      * 
@@ -24,6 +22,7 @@ public class SecondLevel extends World
         super(800, 800, 1);
         prepare();
         showJewels();
+        lever=0;
     }
     public void act(){
         MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -34,10 +33,31 @@ public class SecondLevel extends World
 
             if (Greenfoot.mouseClicked(null)) {
                 if (x > 612 && x < 637 && y > 647 && y < 671) {
-                    showText("Are you sure about your answers?", 400, 400); 
+                     showText("Lives:" + lever, 700, 125); 
+                    /*    if(lever==0){
+                            World Level3 = new ThirdLevel();
+                            Greenfoot.setWorld (Level3);
+                    }
+                    else{
+                            Greenfoot.setWorld (new Die());
+                        }
+                        */
                 }
             }
         }
+        if(Greenfoot.isKeyDown("enter"))
+        {
+            if(lever==5){
+                World Level3 = new ThirdLevel();
+                Greenfoot.setWorld (Level3);
+            }
+            else{
+                Greenfoot.setWorld (new Die());
+            }
+        }
+    }
+    public void pointLever(){
+        lever++;//key down is not 1, is time key down
     }
     public void removeLives()
        {

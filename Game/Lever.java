@@ -21,6 +21,8 @@ public class Lever extends Actor
     {
         if (Greenfoot.isKeyDown("B")) {
             setImage(LeverRight);
+            SecondLevel secondLevel= (SecondLevel)getWorld();
+            secondLevel.pointLever();
         }
         else if (Greenfoot.isKeyDown("Z")) {
             setImage(LeverLeft);

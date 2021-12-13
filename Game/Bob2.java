@@ -65,10 +65,6 @@ public class Bob2 extends SmoothMover
             setImage(ActorRight);
             setLocation(getX() + 3, getY());
         }
-        else if (Greenfoot.isKeyDown("left")) {
-            setImage(ActorLeft);
-            setLocation(getX() - 3, getY());
-        }
     }
     public void lookForDiamonds(){
         if (isTouching(BlueJewel.class)){
