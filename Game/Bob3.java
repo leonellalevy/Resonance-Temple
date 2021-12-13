@@ -44,13 +44,9 @@ public class Bob3 extends SmoothMover
         lookForDiamonds();
         
         if (isTouching(Weapon2.class)){
-            book();
             changeimage(ActorWeaponRight);
         }
         reloadDelayCount++;
-    }
-    private void book(){
-        getWorld().addObject(new Book2(),400,400);
     }
     private void changeimage(GreenfootImage Image)
     {

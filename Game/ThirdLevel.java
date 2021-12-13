@@ -30,10 +30,26 @@ public class ThirdLevel extends World
         timer--;
         showText("Timer: "+timer, 100, 50);
         diamond();
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if (mouse != null) 
+        {
+            int x = mouse.getX();
+            int y = mouse.getY();
+
+            if (Greenfoot.mouseClicked(null)) {
+                if (x > 63 && x < 99 && y > 715 && y < 751) {
+                     if( jewels > 0 )
+                    {
+                        removeJewels();  
+                    }  
+                }
+            }
+        }
     }
     private void diamond(){
-        showText("Time = diamonds, Press on 'T' for more time!", 400, 200);
+        showText("Time = diamonds, Press on the red button for more time!", 400, 200);
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -64,7 +80,11 @@ public class ThirdLevel extends World
         skeleton24.setLocation(154,301);
         skeleton22.setLocation(146,63);
         skeleton2.setLocation(644,182);
+        Button2 button2 = new Button2();
+        addObject(button2,86,716);
+        button2.setLocation(81,733);
     }
+
     public void removeLives()
        {
           lives--;
@@ -74,6 +94,13 @@ public class ThirdLevel extends World
              {
                 Greenfoot.setWorld (new Die());   
              }  
+       }
+    public void removeJewels()
+       {
+          jewels--;
+          timer+=100;
+          Greenfoot.playSound("Ding.wav");
+          showJewels();
        }
     private void showLives()
        {

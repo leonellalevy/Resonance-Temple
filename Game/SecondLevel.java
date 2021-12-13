@@ -26,7 +26,7 @@ public class SecondLevel extends World
         prepare();
         showJewels();
         showLives();
-        timer =500;
+        timer =1000;
         lever=0;
     }
     public void act(){
@@ -49,12 +49,13 @@ public class SecondLevel extends World
             if (Greenfoot.mouseClicked(null)) {
                 if (x > 612 && x < 637 && y > 647 && y < 671) {
                     if(lever==0){
-                            World Level3 = new ThirdLevel(lives,jewels);
-                            Greenfoot.setWorld (Level3); 
+                        World Level3 = new ThirdLevel(lives,jewels);
+                        Greenfoot.setWorld (Level3);   
                     }
-                    else{
-                            removeLives();
-                            Greenfoot.setWorld(new SecondLevel(lives, jewels));
+                    else
+                    {
+                         removeLives();
+                         Greenfoot.setWorld(new SecondLevel(lives, jewels));
                          if( lives == 0 )
                          {
                             Greenfoot.setWorld (new Die());   

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Win extends World
 {
-
+    private int timer;
     /**
      * Constructor for objects of class Win.
      * 
@@ -19,13 +19,17 @@ public class Win extends World
         GreenfootImage MenuPage = new GreenfootImage("GAME_WIN.png");
         MenuPage.scale (getWidth(), getHeight ());
         setBackground(MenuPage);
-
         prepare();
         returnMenu();
+        timer=0;
     }
 
     public void act()
     {
+        timer++;
+        if (timer==5){
+            Greenfoot.playSound("YES.mp3");
+        }
         if(Greenfoot.isKeyDown("Enter"))
         {
             Greenfoot.setWorld (new Menu());
