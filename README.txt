@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------------
                             Resonance Temple
 -------------------------------------------------------------------------------------
-In this game, you can play as a brave treasure hunter who explores the forest doing puzzles in order to find the treasure inside special temple. These puzzles will only get harder the more you progress so be prepared. Join us in this awesome adventure!
+In this game, you can play as a brave treasure hunter who explores the world doing puzzles in order to find the treasure inside special temple. These puzzles will only get harder the more you progress so be prepared. Join us in this awesome adventure!
 -------------------------------------------------------------------------------------
 This game was created on Friday, November 12, 2021.
 -------------------------------------------------------------------------------------
