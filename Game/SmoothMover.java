@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class SmoothMover here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leonella Levy Martel(inspired by Michael Kolling)
+ * @version (13/12/2021)
  */
 public abstract class SmoothMover extends Actor
 {
@@ -17,19 +17,11 @@ public abstract class SmoothMover extends Actor
     {
         this(new Vector());
     }
-    
-    /**
-     * Create new Mover initialised with given velocity.
-     */
     public SmoothMover(Vector velocity)
     {
         this.velocity = velocity;
     }
     
-    /**
-     * Move in the direction of the velocity vector. This simulates movement in one 
-     * time unit (dt==1). Wrap around to the opposite edge of the screen if moving out of the world.
-     */
     public void move() 
     {
         exactX = exactX + velocity.getX();
@@ -48,11 +40,6 @@ public abstract class SmoothMover extends Actor
         }
         super.setLocation((int) exactX, (int) exactY);
     }
- 
-    
-    /**
-     * Set the location using exact (double) co-ordinates.
-     */
     public void setLocation(double x, double y) 
     {
         exactX = x;
@@ -60,10 +47,6 @@ public abstract class SmoothMover extends Actor
         super.setLocation((int) x, (int) y);
     }
     
-    /**
-     * Set the location of this actor. Redefinition of the standard Greenfoot 
-     * method to make sure the exact co-ordinates are updated in sync.
-     */
     public void setLocation(int x, int y) 
     {
         exactX = x;
@@ -71,34 +54,21 @@ public abstract class SmoothMover extends Actor
         super.setLocation(x, y);
     }
 
-    /**
-     * Return the exact x-coordinate (as a double).
-     */
     public double getExactX() 
     {
         return exactX;
     }
 
-    /**
-     * Return the exact y-coordinate (as a double).
-     */
     public double getExactY() 
     {
         return exactY;
     }
 
-    /**
-     * Modify velocity by adding another velocity vector.
-     */
     public void addToVelocity(Vector boost) 
     {
         velocity.add(boost);
     }
-    
-    /**
-     * Accelerate the speed of this mover by the given factor. (Factors less than 1 will
-     * decelerate.) The direction remains unchanged.
-     */
+ 
     public void accelerate(double factor)
     {
         velocity.scale(factor);
@@ -108,33 +78,21 @@ public abstract class SmoothMover extends Actor
         }
     }
     
-    /**
-     * Return the speed of this actor.
-     */
     public double getSpeed()
     {
         return velocity.getLength();
     }
     
-    /**
-     * Revert velocity horizontally.
-     */
     public void invertHorizontalVelocity()
     {
         velocity.revertHorizontal();
     }
     
-    /**
-     * Revert velocity vertically.
-     */
     public void invertVerticalVelocity()
     {
         velocity.revertVertical();
     }
     
-    /**
-     * Return the current speed.
-     */
     public Vector getVelocity() 
     {
         return velocity.copy();

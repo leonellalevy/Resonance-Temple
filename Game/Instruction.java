@@ -1,18 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class Instruction here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leonella Levy Martel
+ * @version (13/12/2021)
  */
 public class Instruction extends World
 {
-
-    /**
-     * Constructor for objects of class Instruction.
-     * 
-     */
     public Instruction()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -21,7 +15,6 @@ public class Instruction extends World
         MenuPage.scale (getWidth(), getHeight ());
         setBackground(MenuPage);
         returnMenu();
-        prepare();
     }
     private void returnMenu(){
         showText("Click '1' to return to continue",292,491);
@@ -33,9 +26,5 @@ public class Instruction extends World
         {
             Greenfoot.setWorld (new Instruction2());
         }
-    }
-    
-    private void prepare()
-    {
     }
 }

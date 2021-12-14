@@ -1,13 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 import greenfoot.World;
-
-//https://resizeimage.net/#google_vignette
 /**
  * Write a description of class Background here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leonella Levy Martel
+ * @version (13/12/2021)
  */
 public class FirstLevel extends World
 {
@@ -21,7 +19,7 @@ public class FirstLevel extends World
      */
     public FirstLevel(int lives,int jewels)
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        
         super(800, 800, 1); 
         prepare();
         lives = 3;
@@ -44,10 +42,6 @@ public class FirstLevel extends World
             }
         }
     }
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
     private void prepare()
     {
         Skeleton skeleton = new Skeleton();

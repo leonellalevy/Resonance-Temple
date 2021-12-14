@@ -3,16 +3,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Bob2 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leonella Levy Martel
+ * @version (13/12/2021)
  */
 public class Bob2 extends SmoothMover
 {
     GreenfootImage ActorRight = new GreenfootImage("Explore2.png");
     GreenfootImage ActorLeft = new GreenfootImage("ExploreLeft.png");
     
-    GreenfootImage ActorWeaponRight = new GreenfootImage("CharWithGunRight.png");
-    GreenfootImage ActorWeaponLeft = new GreenfootImage("CharWithGunLeft.png");
     public Bob2(){
         GreenfootImage image = getImage();
         image.scale(image.getWidth()*1/7, image.getHeight()*1/7);
@@ -24,7 +22,6 @@ public class Bob2 extends SmoothMover
     public void act()
     {
         shift();
-        lookForDiamonds();
     }
     private void shift()
     {
@@ -66,22 +63,9 @@ public class Bob2 extends SmoothMover
             setImage(ActorRight);
             setLocation(getX() + 3, getY());
         }
-    }
-    public void lookForDiamonds(){
-        if (isTouching(BlueJewel.class)){
-            removeTouching(BlueJewel.class);
-            FirstLevel firstLevel= (FirstLevel)getWorld();
-            firstLevel.removeJewels();
-        }    
-        if (isTouching(GreenJewel.class)){
-            removeTouching(GreenJewel.class);
-            FirstLevel firstLevel= (FirstLevel)getWorld();
-            firstLevel.removeJewels();
-        }
-        if (isTouching(RedJewel.class)){
-            removeTouching(RedJewel.class);
-            FirstLevel firstLevel= (FirstLevel)getWorld();
-            firstLevel.removeJewels();
+        else if (Greenfoot.isKeyDown("left")) {
+            setImage(ActorRight);
+            setLocation(getX() -3, getY());
         }
     }
 }

@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Lever5 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leonella Levy Martel
+ * @version (13/12/2021)
  */
 public class Lever5 extends Actor
 {

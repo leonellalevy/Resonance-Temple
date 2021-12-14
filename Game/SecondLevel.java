@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class SecondLevel here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leonella Levy Martel
+ * @version (13/12/2021)
  */
 public class SecondLevel extends World
 {
@@ -13,13 +13,8 @@ public class SecondLevel extends World
     
     public int timer;
     private int lever;
-    /**
-     * Constructor for objects of class SecondLevel.
-     * 
-     */
     public SecondLevel(int lives, int jewels)
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1);
         this.jewels=jewels;
         this.lives=lives;
@@ -45,7 +40,6 @@ public class SecondLevel extends World
         {
             int x = mouse.getX();
             int y = mouse.getY();
-
             if (Greenfoot.mouseClicked(null)) {
                 if (x > 612 && x < 637 && y > 647 && y < 671) {
                     if(lever==0){
@@ -88,12 +82,7 @@ public class SecondLevel extends World
        {
           showText("Jewels:" + jewels, 700, 50);    
        }
-    
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
+       private void prepare()
     {
         Bob bob = new Bob();
         addObject(bob,50,151);

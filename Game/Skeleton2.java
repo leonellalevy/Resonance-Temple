@@ -3,16 +3,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Skeleton2 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leonella Levy Martel
+ * @version (13/12/2021)
  */
 public class Skeleton2 extends Actor
 {
     private int value = 2;
-    /**
-     * Act - do whatever the Skeleton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public Skeleton2()
     {
         GreenfootImage image = getImage();
@@ -20,6 +16,14 @@ public class Skeleton2 extends Actor
     }
     public void act()
     {
+        int i;
+        int skeletons = getWorld().getObjects(Skeleton2.class).size();
+        for(i=6; i > skeletons ; i--) {
+            getWorld().addObject(new Skeleton2(),Greenfoot.getRandomNumber(800),Greenfoot.getRandomNumber(800));
+            if(i==0){
+                i=6;
+            } 
+        }
         int rnd = Greenfoot.getRandomNumber(20);
         if(rnd == 0){
             if (getWorld().getObjects(Bob3.class).isEmpty()) return; 

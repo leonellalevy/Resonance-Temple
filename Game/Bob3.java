@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Bob3 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leonella Levy Martel
+ * @version (13/12/2021)
  */
 public class Bob3 extends SmoothMover
 {
@@ -144,6 +144,7 @@ public class Bob3 extends SmoothMover
     public void addKing(){
         int timer = ((ThirdLevel) getWorld()).timer;
         if (timer==1500){
+            getWorld().showText("KILL IT!!!", 400, 400);
             getWorld().addObject(new KingSkeleton(),1,1);
         }
     }

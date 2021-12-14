@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class KingSkeleton here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leonella Levy Martel
+ * @version (13/12/2021)
  */
 public class KingSkeleton extends Actor
 {
@@ -15,7 +15,7 @@ public class KingSkeleton extends Actor
     }
     public void act()
     {
-        move(2);
+        move(3/2);
         if (getWorld().getObjects(Bob3.class).isEmpty()) return; 
         Actor bob3 = (Actor)getWorld().getObjects(Bob3.class).get(0); 
         turnTowards(bob3.getX(), bob3.getY()); 
@@ -32,5 +32,4 @@ public class KingSkeleton extends Actor
             }
         }
     }
-    
 }

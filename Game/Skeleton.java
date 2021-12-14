@@ -3,16 +3,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Skeleton here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leonella Levy Martel
+ * @version (13/12/2021)
  */
 public class Skeleton extends Actor
 {
     private int value = 2;
-    /**
-     * Act - do whatever the Skeleton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public Skeleton()
     {
         GreenfootImage image = getImage();

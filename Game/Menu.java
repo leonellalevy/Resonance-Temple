@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Menu here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leonella Levy Martel
+ * @version (13/12/2021)
  */
 public class Menu extends World
 {
@@ -19,8 +19,6 @@ public class Menu extends World
         GreenfootImage MenuPage = new GreenfootImage("GAME_MENU.png");
         MenuPage.scale (getWidth(), getHeight ());
         setBackground(MenuPage);
-
-        prepare();
     }
 
     public void act()
@@ -41,14 +39,5 @@ public class Menu extends World
                 }
             }
         }
-    }
-    
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
-
     }
 }

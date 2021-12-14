@@ -1,27 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class ThirdLevel here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leonella Levy Martel
+ * @version (13/12/2021)
  */
 public class ThirdLevel extends World
 {
     public int jewels;
     public int lives;
-    
     public int timer;
-    /**
-     * Constructor for objects of class ThirdLevel.
-     * 
-     */
     public ThirdLevel(int lives, int jewels)
     {    
         super(800, 800, 1);
         this.jewels=jewels;
         this.lives=lives;
-        timer =2000;
+        timer =3000;
         showJewels();
         showLives();
         prepare();
@@ -35,10 +29,9 @@ public class ThirdLevel extends World
         {
             int x = mouse.getX();
             int y = mouse.getY();
-
             if (Greenfoot.mouseClicked(null)) {
                 if (x > 63 && x < 99 && y > 715 && y < 751) {
-                     if( jewels > 0 )
+                     while( jewels > 0 )
                     {
                         removeJewels();  
                     }  
@@ -47,13 +40,8 @@ public class ThirdLevel extends World
         }
     }
     private void diamond(){
-        showText("Time = diamonds, Press on the red button for more time!", 400, 200);
+        showText("Lives = Jewels, Press on the red button with your mouse!", 400, 200);
     }
-    
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
     private void prepare()
     {
         Weapon2 weapon22 = new Weapon2();
@@ -84,7 +72,6 @@ public class ThirdLevel extends World
         addObject(button2,86,716);
         button2.setLocation(81,733);
     }
-
     public void removeLives()
        {
           lives--;
@@ -98,9 +85,14 @@ public class ThirdLevel extends World
     public void removeJewels()
        {
           jewels--;
-          timer+=100;
+          addLives();
           Greenfoot.playSound("Ding.wav");
           showJewels();
+       }
+    private void addLives()
+       {
+          lives++;
+          showLives();
        }
     private void showLives()
        {
