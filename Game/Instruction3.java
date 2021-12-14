@@ -17,7 +17,7 @@ public class Instruction3 extends World
         returnMenu();
     }
     private void returnMenu(){
-        showText("Click '3' to return to Menu Page",292,491);
+        showText("Click on '3' to return to Menu Page",292,491);
         showText("LEVEL 3",400,25);
     }
     public void act()

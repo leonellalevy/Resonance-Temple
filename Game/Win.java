@@ -25,10 +25,10 @@ public class Win extends World
             Greenfoot.playSound("YES.mp3");
         }
         if(Greenfoot.isKeyDown("Enter")){
-            Greenfoot.setWorld (new Menu());
+            Greenfoot.setWorld (new Credits());
         }
     }
         private void returnMenu(){
-        showText("Click 'enter' to return to the main menu",600,491);
+        showText("Click 'enter' to see the credits",600,491);
     }
 }

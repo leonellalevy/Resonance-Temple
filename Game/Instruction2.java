@@ -18,7 +18,7 @@ public class Instruction2 extends World
         returnMenu();
     }
     private void returnMenu(){
-        showText("Click '2' to return to continue",600,450);
+        showText("Click on '2' to return to continue",600,450);
         showText("LEVEL 2",400,25);
     }
     public void act()

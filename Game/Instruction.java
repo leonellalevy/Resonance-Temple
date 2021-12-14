@@ -8,8 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Instruction extends World
 {
     public Instruction()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+    {   
         super(800, 600, 1); 
         GreenfootImage MenuPage = new GreenfootImage("GAME_INSTRUCTIONS.png");
         MenuPage.scale (getWidth(), getHeight ());
@@ -17,7 +16,7 @@ public class Instruction extends World
         returnMenu();
     }
     private void returnMenu(){
-        showText("Click '1' to return to continue",292,491);
+        showText("Click on '1' to return to continue",292,491);
         showText("LEVEL 1",400,25);
     }
     public void act()
