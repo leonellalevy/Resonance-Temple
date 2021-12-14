@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Die here.
+ * This class is shown when the main character dies. The player can start the game again
  * 
  * @author Leonella Levy Martel
  * @version (13/12/2021)

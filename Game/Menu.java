@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Menu here.
+ * this class is the menu where you can see the instructions and start the game
  * 
  * @author Leonella Levy Martel
  * @version (13/12/2021)

@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Button2 here.
+ * button use in third level
  * 
  *@author Leonella Levy Martel
  * @version (13/12/2021)

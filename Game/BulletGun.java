@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BulletGun here.
+ * this class represents the bullet that goes out the gun
  * 
  * @author Leonella Levy Martel(inspired by Michael Kolling)
  * @version (13/12/2021)

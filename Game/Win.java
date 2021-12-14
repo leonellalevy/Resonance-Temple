@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Win here.
+ * this class is when the player win the game
  * 
  * @author Leonella Levy Martel
  * @version (13/12/2021)

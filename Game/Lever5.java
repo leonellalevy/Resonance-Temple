@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Lever5 here.
+ * This class shows a lever in level 2
  * 
  * @author Leonella Levy Martel
  * @version (13/12/2021)

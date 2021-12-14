@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class SecondLevel here.
+ * This class is for the second level
  * 
  * @author Leonella Levy Martel
  * @version (13/12/2021)

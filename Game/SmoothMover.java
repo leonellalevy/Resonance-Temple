@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class SmoothMover here.
+ * this class allows to have velocity of this game
  * 
  * @author Leonella Levy Martel(inspired by Michael Kolling)
  * @version (13/12/2021)

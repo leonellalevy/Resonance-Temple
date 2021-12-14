@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 import greenfoot.World;
 /**
- * Write a description of class Background here.
+ * This class is for the first level
  * 
  * @author Leonella Levy Martel
  * @version (13/12/2021)

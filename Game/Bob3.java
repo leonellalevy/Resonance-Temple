@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bob3 here.
+ * This is the main character , Bob in level 3
  * 
  * @author Leonella Levy Martel
  * @version (13/12/2021)

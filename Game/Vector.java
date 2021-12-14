@@ -1,5 +1,5 @@
 /**
- * Write a description of class Vector here.
+ * This class allows have have, direction, and speed
  * 
  * @author Leonella Levy Martel(inspired by Michael Kolling)
  * @version (13/12/2021)

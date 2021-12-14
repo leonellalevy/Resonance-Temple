@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Write a description of class Instruction here.
+ *This class shows the instructions of the first level.
  * 
  * @author Leonella Levy Martel
  * @version (13/12/2021)

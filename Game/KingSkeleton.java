@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class KingSkeleton here.
+ * This is the final enemy of the main character, it can kills Bob
  * 
  * @author Leonella Levy Martel
  * @version (13/12/2021)
