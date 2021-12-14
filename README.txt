@@ -13,12 +13,9 @@ Authors:
 -------------------------------------------------------------------------------------
 This is licensed by MIT. Read LICENSE.txt file.
 -------------------------------------------------------------------------------------
-PATCH NOTES: Version 0.6 - (11/29/2021)
+PATCH NOTES: Version GM1 - (12/13/2021)
 
-- Ariel added new alternate version of main character in game assets
-- Ariel added Menu Start and Game End/Death Screen
-- Leonella updated the code for the game start and game end menu's to work
-- Leonella added bullets
+- FINALIZED EVERYTHING
 -------------------------------------------------------------------------------------
 ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠠⠤⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⣀⢤⡒⠉⠁⠀⠒⢂⡀⠀⠀⠀⠈⠉⣒⠤⣀⠀⠀⠀⠀
